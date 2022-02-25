@@ -1,0 +1,335 @@
+$font-primary: 'Montserrat', sans-serif
+$dark-color: hsla(0, 0%, 20%, 1)
+$medium-color: hsla(0, 0%, 51%, 1)
+$primary-color: hsla(28, 87%, 62%, 1)
+$filter-icon: invert(58%) sepia(1%) saturate(0%) hue-rotate(4deg) brightness(87%) contrast(92%)
+
+*,
+*::after,
+*::before
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html,
+body
+  height: 100%
+  min-height: 100vh
+  font-size: 14px
+  line-height: 17px
+
+html,
+body,
+input,
+select,
+button
+  font-family: $font-primary
+  font-weight: 600
+  color: $dark-color
+  background-color: hsla(0, 0%, 100%, 1)
+
+img
+  width: 100%
+
+fieldset
+  border: none
+  padding-top: 45px
+
+  &.group
+    padding-top: 0
+    display: grid
+    grid-template-columns: repeat(2, minmax(100px, 1fr))
+    gap: 23px
+
+form
+  padding-bottom: 100px
+
+input,
+select
+  font-size: 12px
+  line-height: 15px
+  outline: none
+
+  &:focus,
+  &:focus-visible,
+  &:focus-within
+    outline: none
+
+input
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+
+  &[type=number]
+    -moz-appearance: textfield
+
+button
+  &:hover
+    cursor: pointer
+
+  &:focus
+  &:focus-visible,
+  &:focus-within
+    outline: none
+    outline: 2px solid lighten($primary-color, 20%)
+
+.container
+  padding: 32px 18px
+  max-width: 1220px
+  margin: 0 auto
+
+.main
+  &-title
+    font-size: 24px
+    line-height: 29px
+    margin-bottom: 21px
+
+.cart
+  &-container
+    background-color: hsla(0, 0%, 95%, 1)
+    border-radius: 12px
+    padding: 31px 25px 16px
+
+  &-list
+    list-style: none
+    display: flex
+    flex-direction: column
+    gap: 28.4px
+    margin-bottom: 87px
+  
+  &-item
+    display: flex
+    gap: 18.47px
+
+  &-resume
+    .cart-item
+      border-top: 1px solid hsl(0, 0%, 74.1%)
+      padding-top: 10px
+      padding-bottom: 10px
+      display: flex
+      justify-content: space-between
+
+  &-img
+    border-radius: 13px
+    object-fit: cover
+
+  &-info
+    margin-bottom: 22px
+
+  &-title
+    font-size: 12px
+    line-height: 15px
+    margin-bottom: 5.5px
+    display: block
+
+  &-new-price
+    font-size: 14px
+    line-height: 17px
+    color: hsla(28, 87%, 62%, 1)
+    display: inline-block
+
+  &-old-price
+    font-size: 10px
+    line-height: 12px
+    display: inline-block
+    margin-left: 8px
+
+  &-input-selector
+    display: flex
+    justify-content: space-between
+    gap: 5px
+    padding: 15px 10px
+    border: 1px solid hsla(0, 0%, 51%, 1)
+    border-radius: 12px
+    height: 49.86px
+    width: 122px
+
+    input
+      border: none
+      background-color: transparent
+      width: 50px
+      text-align: center
+
+  &-btn-quantity
+    width: 20px
+    height: 20px
+    background-color: hsla(0, 0%, 88%, 1)
+    border: 0
+    border-radius: 4px
+    color: $medium-color
+
+    > img
+      filter: $filter-icon
+
+    &:hover
+      background-color: darken(hsla(0, 0%, 88%, 1), 5%)
+      cursor: pointer
+
+    &:focus
+    &:focus-visible,
+    &:focus-within
+      outline: none
+
+.section-title
+  font-size: 14px
+  line-height: 17px
+  margin-bottom: 11px
+
+.input
+  &-container
+    background-color: white
+    margin-bottom: 16.2px
+    
+    &:last-child
+      margin-bottom: 0
+
+    label
+      font-size: 10px
+      line-height: 12px
+      color: hsla(0, 0%, 31%, 1)
+      display: block
+      margin-bottom: 5.3px
+
+  &-icon
+    border: 1px solid $medium-color
+    border-radius: 12px
+    height: 40.56px
+    display: flex
+    align-items: center
+
+    &:focus,
+    &:focus-visible,
+    &:focus-within
+      outline: 2px solid
+      outline-color: $primary-color
+      border-color: lighten($primary-color, 20%)
+
+    > img
+      width: 20px
+      margin-left: 10px
+      filter: $filter-icon
+
+    input
+      border: 0
+      height: 100%
+      width: 100%
+      border-top-right-radius: 12px
+      border-bottom-right-radius: 12px
+      padding: 12.77px
+      color: hsla(0, 0%, 20%, 1)
+       
+.custom
+  &-checkbox
+    margin-bottom: 21px
+    display: block
+
+    input[type=checkbox]
+      display: none
+
+      + label
+        &.checkbox-label
+          position: relative
+          cursor: pointer
+          font-size: 10px
+          line-height: 12px
+          
+        &::before
+          content: ''
+          background-color: transparent
+          border: 1px solid $dark-color
+          cursor: pointer
+
+          width: 16px
+          height: 15px
+          display: inline-block
+          position: relative
+          vertical-align: middle
+          border-radius: 4px
+          margin-right: 8px
+
+      &:checked
+        + label::after
+          content: ''
+          display: block
+          position: absolute
+          top: 1px
+          left: 5px
+          width: 6px
+          height: 10px
+
+          border: solid $primary-color
+          border-width: 0 2px 2px 0
+          transform: rotate(45deg)
+
+  &-select
+    position: relative
+    width: 100%
+
+    > select
+      appearance: none
+      border: none
+      background-color: transparent
+      width: calc(100% - 12px)
+
+      &::ms-expand
+        display: none
+
+    > .select-icon
+      position: absolute
+      top: -1px
+      right: 12px
+      pointer-events: none
+    
+      width: 20px
+      height: 20px
+      background-color: hsla(0, 0%, 88%, 1)
+      border: 0
+      border-radius: 4px
+
+      > img
+        filter: $filter-icon
+
+    &:focus > .select-icon
+    &:focus-visible > .select-icon,
+    &:focus-within > .select-icon
+
+button
+  &.submit-btn
+    background-color: $primary-color
+    color: hsla(0, 0%, 100%, 1)
+    font-size: 16px
+    line-height: 19.5px
+    height: 54px
+    width: 166px
+    float: right
+    border: 0
+    border-radius: 12px
+    transition: all 1s ease
+
+  &:hover
+    background-color: darken($primary-color, 10%)
+    transition: all 1s ease
+
+footer
+  &.credits
+    font-size: 12px
+    line-height: 16px
+    text-align: center
+    color: $medium-color
+    padding-bottom: 20px
+    
+    a
+      color: lighten($dark-color, 25%)
+      font-weight: 700
+      text-decoration: none
+
+      &:hover,
+      &:active,
+      &:focus
+        color: darken($medium-color, 10%)
+
+@media screen and (min-width: 998px)
+  .input
+    &-icon
+      height: 56px

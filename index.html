@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto 16 | Checkout page | Dev Challenges</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="container">
+    <h1 class="main-title">Checkout</h1>
+    <div class="cart-container">
+      <ul class="cart-list">
+        <li class="cart-item">
+          <img src="img/photo1.png" alt="Backbag" class="cart-img">
+          <div class="cart-body">
+            <div class="cart-info">
+              <span class="cart-title">Vintage Backbag</span>
+              <span class="cart-new-price">$54.99</span>
+              <span class="cart-old-price">$94.99</span>
+            </div>
+            <div class="cart-input-selector">
+              <button class="cart-btn-quantity btn-subs">
+                <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
+              </button>
+              <input type="number" class="cart-item-quantity" value="1">
+              <button class="cart-btn-quantity btn-add">
+                <img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10">
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="cart-item">
+          <img src="img/photo2.png" alt="Levi shoes" class="cart-img">
+          <div class="cart-body">
+            <div class="cart-info">
+              <span class="cart-title">Levi Shoes</span>
+              <span class="cart-new-price">$74.99</span>
+              <span class="cart-old-price">$124.99</span>
+            </div>
+            <div class="cart-input-selector">
+              <button class="cart-btn-quantity btn-subs">
+                <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
+              </button>
+              <input type="number" class="cart-item-quantity" value="1">
+              <button class="cart-btn-quantity btn-add"><img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10"></button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ol class="cart-resume">
+        <li class="cart-item">
+          <span class="item-title">Shipping</span>
+          <span class="item-amount">$19</span>
+        </li>
+        <li class="cart-item">
+          <span class="item-title">Total</span>
+          <span class="item-amount">$148.98</span>
+        </li>
+      </ol>
+    </div>
+    <form action="#!" class="checkout-form">
+      <fieldset class="section-form">
+        <h2 class="section-title">Contact information</h2>
+        <div class="input-container">
+          <label for="email">E-mail</label>
+          <div class="input-icon">
+            <img src="img/icon/email.svg" alt="Email" class="icon" width="10">
+            <input type="email" id="email" name="email" placeholder="Enter your email...">
+          </div>
+        </div>
+
+        <div class="input-container">
+          <label for="phone">Phone</label>
+          <div class="input-icon">
+            <img src="img/icon/phone.svg" alt="Teléfono" class="icon" width="10">
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone...">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="section-form">
+        <h2 class="section-title">Shipping address</h2>
+
+        <div class="input-container">
+          <label for="full-name">Full name</label>
+          <div class="input-icon">
+            <img src="img/icon/avatar.svg" alt="Avatar" class="icon" width="10">
+            <input type="text" id="full-name" name="full-name" placeholder="Rodney Cotton">
+          </div>
+        </div>
+
+        <div class="input-container">
+          <label for="address">Address</label>
+          <div class="input-icon">
+            <img src="img/icon/home.svg" alt="Address" class="icon" width="10">
+            <input type="text" id="address" name="address" placeholder="Your address...">
+          </div>
+        </div>
+
+        <div class="input-container">
+          <label for="city">Your city</label>
+          <div class="input-icon">
+            <img src="img/icon/city.svg" alt="Edificio" class="icon" width="10">
+            <input type="text" id="city" name="city" placeholder="Your city...">
+          </div>
+        </div>
+
+        <fieldset class="group">
+          <div class="input-container">
+            <label for="country">Country</label>
+            <div class="input-icon">
+              <img src="img/icon/world.svg" alt="Planeta" class="icon" width="10">
+              <div class="custom-select">
+                <select name="country" id="country">
+                  <option value="0">Your country...</option>
+                  <option value="1">Bolivar</option>
+                  <option value="2">Guayana</option>
+                </select>
+                <span class="select-icon">
+                  <img src="img/icon/down.svg" alt="Planeta" class="icon select-icon" width="10">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="postal-code">Postal code</label>
+            <div class="input-icon">
+              <img src="img/icon/mailbox.svg" alt="Buzón" class="icon" width="10">
+              <input type="text" id="postal-code" name="postal_code" placeholder="Your postal code...">
+            </div>
+          </div>
+        </fieldset>
+
+        <span class="custom-checkbox">
+          <input type="checkbox" name="save-check" id="save-check">
+          <label for="save-check" class="checkbox-label">Save this information for next time</label>
+        </span>
+      </fieldset>
+
+      <button type="submit" class="submit-btn">Continue</button>
+    </form>
+  </main>
+  <footer class="credits">
+    created by <a href="https://devchallenges.io/portfolio/karinaestaba" title="Visitar web">Karina estaba</a> - devchallenges.io
+  </footer>
+</body>
+</html>
