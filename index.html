@@ -13,54 +13,56 @@
   <main class="container">
     <h1 class="main-title">Checkout</h1>
     <div class="cart-container">
-      <ul class="cart-list">
-        <li class="cart-item">
-          <img src="img/photo1.png" alt="Backbag" class="cart-img">
-          <div class="cart-body">
-            <div class="cart-info">
-              <span class="cart-title">Vintage Backbag</span>
-              <span class="cart-new-price">$54.99</span>
-              <span class="cart-old-price">$94.99</span>
+      <aside class="card">
+        <ul class="cart-list">
+          <li class="cart-item">
+            <img src="img/photo1.png" alt="Backbag" class="cart-img">
+            <div class="cart-body">
+              <div class="cart-info">
+                <span class="cart-title">Vintage Backbag</span>
+                <span class="cart-new-price">$54.99</span>
+                <span class="cart-old-price">$94.99</span>
+              </div>
+              <div class="cart-input-selector">
+                <button class="cart-btn-quantity btn-subs">
+                  <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
+                </button>
+                <input type="number" class="cart-item-quantity" value="1">
+                <button class="cart-btn-quantity btn-add">
+                  <img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10">
+                </button>
+              </div>
             </div>
-            <div class="cart-input-selector">
-              <button class="cart-btn-quantity btn-subs">
-                <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
-              </button>
-              <input type="number" class="cart-item-quantity" value="1">
-              <button class="cart-btn-quantity btn-add">
-                <img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10">
-              </button>
+          </li>
+          <li class="cart-item">
+            <img src="img/photo2.png" alt="Levi shoes" class="cart-img">
+            <div class="cart-body">
+              <div class="cart-info">
+                <span class="cart-title">Levi Shoes</span>
+                <span class="cart-new-price">$74.99</span>
+                <span class="cart-old-price">$124.99</span>
+              </div>
+              <div class="cart-input-selector">
+                <button class="cart-btn-quantity btn-subs">
+                  <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
+                </button>
+                <input type="number" class="cart-item-quantity" value="1">
+                <button class="cart-btn-quantity btn-add"><img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10"></button>
+              </div>
             </div>
-          </div>
-        </li>
-        <li class="cart-item">
-          <img src="img/photo2.png" alt="Levi shoes" class="cart-img">
-          <div class="cart-body">
-            <div class="cart-info">
-              <span class="cart-title">Levi Shoes</span>
-              <span class="cart-new-price">$74.99</span>
-              <span class="cart-old-price">$124.99</span>
-            </div>
-            <div class="cart-input-selector">
-              <button class="cart-btn-quantity btn-subs">
-                <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
-              </button>
-              <input type="number" class="cart-item-quantity" value="1">
-              <button class="cart-btn-quantity btn-add"><img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10"></button>
-            </div>
-          </div>
-        </li>
-      </ul>
-      <ol class="cart-resume">
-        <li class="cart-item">
-          <span class="item-title">Shipping</span>
-          <span class="item-amount">$19</span>
-        </li>
-        <li class="cart-item">
-          <span class="item-title">Total</span>
-          <span class="item-amount">$148.98</span>
-        </li>
-      </ol>
+          </li>
+        </ul>
+        <ol class="cart-resume">
+          <li class="cart-item">
+            <span class="item-title">Shipping</span>
+            <span class="item-amount">$19</span>
+          </li>
+          <li class="cart-item">
+            <span class="item-title">Total</span>
+            <span class="item-amount">$148.98</span>
+          </li>
+        </ol>
+      </aside>
     </div>
     <form action="#!" class="checkout-form">
       <fieldset class="section-form">

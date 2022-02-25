@@ -87,9 +87,11 @@ button
 
 .cart
   &-container
-    background-color: hsla(0, 0%, 95%, 1)
-    border-radius: 12px
-    padding: 31px 25px 16px
+
+    .card
+      background-color: hsla(0, 0%, 95%, 1)
+      border-radius: 12px
+      padding: 31px 25px 16px
 
   &-list
     list-style: none
@@ -113,6 +115,8 @@ button
   &-img
     border-radius: 13px
     object-fit: cover
+    width: 122px
+    height: 124px
 
   &-info
     margin-bottom: 22px
@@ -134,6 +138,10 @@ button
     line-height: 12px
     display: inline-block
     margin-left: 8px
+
+  &-new-price
+    font-size: 16px
+    line-height: 20px
 
   &-input-selector
     display: flex
@@ -329,7 +337,90 @@ footer
       &:focus
         color: darken($medium-color, 10%)
 
-@media screen and (min-width: 998px)
+@media (min-width: 768px)
+  body,
+  html
+    font-size: 18px
+    line-height: 22px
+
+  input,
+  select
+    font-size: 16px
+    line-height: 19px
+
+  fieldset
+    padding-top: 58px
+
+    &:first-of-type
+      padding-top: 30px
+
+  .container
+    display: grid
+    grid-template-areas: "c-header c-header" "c-form c-resume" "c-footer c-footer"
+    grid-template-columns: 2.5fr 2fr
+    gap: 20px
+    justify-content: space-between
+
+    .main-title
+      grid-area: c-header
+      font-size: 36px
+      line-height: 44px
+
+    .cart-container
+      grid-area: c-resume
+      justify-self: end
+      margin-top: 42px
+
+    .checkout-form
+      grid-area: c-form
+
+  .section
+    &-title
+      font-size: 18px
+      line-height: 22px
+      margin-bottom: 15px
+
+    footer
+      &.credits
+        grid-area: c-footer
+
   .input
     &-icon
       height: 56px
+
+    &-container
+      label
+        font-size: 12px
+        line-height: 15px
+        margin-bottom: 7px
+
+  .custom
+    &-checkbox
+      input[type=checkbox]
+        + label
+          &.checkbox-label
+            font-size: 12px
+            line-height: 15px
+
+  .cart
+    &.list
+      gap: 31px
+      margin-bottom: 95px
+
+    &-title
+      font-size: 16px
+      line-height: 18px
+
+    &-img
+      min-width: 134px
+      min-height: 134px
+      width: 134px
+      height: 134px
+
+    &-old-price
+      font-size: 12px
+      line-height: 15px
+  
+@media (min-width: 992px)
+  .cart-container
+    width: 383px
