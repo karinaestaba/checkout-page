@@ -10,6 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="modal-container" id="checkoutModal">
+    <div class="backdrop"></div>
+    <section class="modal">
+      <img src="img/icon/send.svg" alt="Icon" class="modal-icon" height="40">
+      <h2 class="modal-title">Success!</h2>
+      <p class="modal-description">Your order has been processed correctly</p>
+    </section>
+  </div>
   <main class="container">
     <h1 class="main-title">Checkout</h1>
     <div class="cart-container">
@@ -24,10 +32,11 @@
                 <span class="cart-old-price">$94.99</span>
               </div>
               <div class="cart-input-selector">
-                <button class="cart-btn-quantity btn-subs">
+                <button class="cart-btn-quantity btn-subs" >
                   <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
                 </button>
-                <input type="number" class="cart-item-quantity" value="1">
+                <input type="number" class="cart-item-quantity" value="1" min="1" max="30" form="checkoutForm" title="Maximum stock: 30 items">
+                <small class="error-out-of-range">Out of stock <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"> </small>
                 <button class="cart-btn-quantity btn-add">
                   <img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10">
                 </button>
@@ -46,7 +55,8 @@
                 <button class="cart-btn-quantity btn-subs">
                   <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
                 </button>
-                <input type="number" class="cart-item-quantity" value="1">
+                <input type="number" class="cart-item-quantity" value="1" min="1" max="30" form="checkoutForm" title="Maximum stock: 30 items">
+                <small class="error-out-of-range">Out of stock <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"> </small>
                 <button class="cart-btn-quantity btn-add"><img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10"></button>
               </div>
             </div>
@@ -55,31 +65,31 @@
         <ol class="cart-resume">
           <li class="cart-item">
             <span class="item-title">Shipping</span>
-            <span class="item-amount">$19</span>
+            <span class="item-amount" id="cartShippingAmount">$19</span>
           </li>
           <li class="cart-item">
             <span class="item-title">Total</span>
-            <span class="item-amount">$148.98</span>
+            <span class="item-amount" id="cartTotalAmount">$148.98</span>
           </li>
         </ol>
       </aside>
     </div>
-    <form action="#!" class="checkout-form">
+    <form action="#!" class="checkout-form" id="checkoutForm">
       <fieldset class="section-form">
         <h2 class="section-title">Contact information</h2>
         <div class="input-container">
-          <label for="email">E-mail</label>
           <div class="input-icon">
             <img src="img/icon/email.svg" alt="Email" class="icon" width="10">
-            <input type="email" id="email" name="email" placeholder="Enter your email...">
+            <input type="email" id="email" name="email" placeholder="Enter your email..." required>
+            <label for="email">E-mail <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <div class="input-container">
-          <label for="phone">Phone</label>
           <div class="input-icon">
             <img src="img/icon/phone.svg" alt="Teléfono" class="icon" width="10">
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone...">
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" title="Enter in format ###-##-###" required>
+            <label for="phone">Phone <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
       </fieldset>
@@ -88,52 +98,53 @@
         <h2 class="section-title">Shipping address</h2>
 
         <div class="input-container">
-          <label for="full-name">Full name</label>
           <div class="input-icon">
             <img src="img/icon/avatar.svg" alt="Avatar" class="icon" width="10">
-            <input type="text" id="full-name" name="full-name" placeholder="Rodney Cotton">
+            <input type="text" id="full-name" name="full-name" placeholder="Rodney Cotton" pattern="[A-zÀ-ž ]{3,}" required title="Your name can only contain letters">
+            <label for="full-name">Full name <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <div class="input-container">
-          <label for="address">Address</label>
           <div class="input-icon">
             <img src="img/icon/home.svg" alt="Address" class="icon" width="10">
-            <input type="text" id="address" name="address" placeholder="Your address...">
+            <input type="text" id="address" name="address" placeholder="Your address..." required maxlength="100">
+            <label for="address">Address <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <div class="input-container">
-          <label for="city">Your city</label>
           <div class="input-icon">
             <img src="img/icon/city.svg" alt="Edificio" class="icon" width="10">
-            <input type="text" id="city" name="city" placeholder="Your city...">
+            <input type="text" id="city" name="city" placeholder="Your city..." required maxlength="50">
+            <label for="city">Your city <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <fieldset class="group">
           <div class="input-container">
-            <label for="country">Country</label>
             <div class="input-icon">
               <img src="img/icon/world.svg" alt="Planeta" class="icon" width="10">
               <div class="custom-select">
-                <select name="country" id="country">
-                  <option value="0">Your country...</option>
-                  <option value="1">Bolivar</option>
-                  <option value="2">Guayana</option>
+                <select name="country" id="country" required>
+                  <option value="" disabled selected>Your country...</option>
+                  <option value="1">Venezuela</option>
+                  <option value="2">Paraguay</option>
+                  <option value="3">Ecuador</option>
                 </select>
+                <label for="country">Country <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
                 <span class="select-icon">
                   <img src="img/icon/down.svg" alt="Planeta" class="icon select-icon" width="10">
                 </span>
               </div>
             </div>
           </div>
-
+          
           <div class="input-container">
-            <label for="postal-code">Postal code</label>
             <div class="input-icon">
               <img src="img/icon/mailbox.svg" alt="Buzón" class="icon" width="10">
-              <input type="text" id="postal-code" name="postal_code" placeholder="Your postal code...">
+              <input type="text" id="postal-code" name="postal_code" placeholder="Your postal code..." required pattern="[0-9]{4}" title="1234">
+              <label for="postal-code">Postal code <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
             </div>
           </div>
         </fieldset>
@@ -144,11 +155,15 @@
         </span>
       </fieldset>
 
-      <button type="submit" class="submit-btn">Continue</button>
+      <p class="error-form">Enter your data correctly</p>
+      <p class="success-form">Your data seems to be correct!</p>
+      <button type="button" class="submit-btn" id="submitFormBtn">Continue</button>
     </form>
   </main>
   <footer class="credits">
     created by <a href="https://devchallenges.io/portfolio/karinaestaba" title="Visitar web">Karina estaba</a> - devchallenges.io
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -2,6 +2,8 @@ $font-primary: 'Montserrat', sans-serif
 $dark-color: hsla(0, 0%, 20%, 1)
 $medium-color: hsla(0, 0%, 51%, 1)
 $primary-color: hsla(28, 87%, 62%, 1)
+$error-color: hsl(3, 92%, 44%)
+$success-color: hsl(120, 39%, 35%)
 $filter-icon: invert(58%) sepia(1%) saturate(0%) hue-rotate(4deg) brightness(87%) contrast(92%)
 
 *,
@@ -17,6 +19,26 @@ body
   min-height: 100vh
   font-size: 14px
   line-height: 17px
+  position: relative
+
+  &.show
+    &-success
+      .modal-container
+        display: flex
+        justify-content: center
+        align-items: center
+
+    &-error
+      .error-form
+        display: block
+      
+      input:invalid,
+      select:invalid
+        ~ label
+          color: $error-color
+
+          > .error-input.icon
+            display: block
 
 html,
 body,
@@ -38,11 +60,55 @@ fieldset
   &.group
     padding-top: 0
     display: grid
-    grid-template-columns: repeat(2, minmax(100px, 1fr))
-    gap: 23px
+    grid-template-columns: 1fr
+    gap: 0
+    margin-top: -16px
+
+    > .input-container:first-of-type
+      margin-bottom: 0
 
 form
   padding-bottom: 100px
+
+  .success-form,
+  .error-form
+    font-size: 12px
+    line-height: 15px
+    display: none
+    text-align: center
+    margin: .8rem 0 1.8rem
+    padding: 1rem .5rem
+    border-radius: 12px
+    border: 1px dotted
+
+  .success
+    &-form
+      color: $success-color
+      border-color: $success-color
+
+.error
+  &-form
+    color: $error-color
+    border-color: $error-color
+
+  &-input
+    &.icon
+      display: none
+      width: 15px
+      filter: invert(13%) sepia(95%) saturate(6166%) hue-rotate(3deg) brightness(92%) contrast(104%)
+
+  &-out-of-range
+    display: none
+    color: $error-color
+    position: absolute
+    bottom: -1.5rem
+    left: 0
+    right: 0
+    margin-left: auto
+    margin-right: auto
+    font-size: 12px
+    line-height: 15px
+    justify-content: center
 
 input,
 select
@@ -56,6 +122,14 @@ select
     outline: none
 
 input
+  &:invalid:not(:placeholder-shown)
+    ~ label
+      color: $error-color
+
+      > .error-input.icon
+        display: block
+
+input
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button
     -webkit-appearance: none
@@ -63,6 +137,17 @@ input
 
   &[type=number]
     -moz-appearance: textfield
+
+    &:out-of-range
+      color: $error-color
+
+      + .error-out-of-range
+        display: flex
+        gap: .2rem
+        align-items: center
+
+        > .error-input.icon
+          display: inline-block
 
 button
   &:hover
@@ -93,30 +178,46 @@ button
       border-radius: 12px
       padding: 31px 25px 16px
 
+      .cart-body
+        width: 100%
+
   &-list
     list-style: none
     display: flex
     flex-direction: column
     gap: 28.4px
     margin-bottom: 87px
+
+    .cart-item
+      text-align: center
+      flex-direction: column
+      margin-bottom: 15px
   
   &-item
     display: flex
     gap: 18.47px
 
   &-resume
-    .cart-item
-      border-top: 1px solid hsl(0, 0%, 74.1%)
-      padding-top: 10px
-      padding-bottom: 10px
-      display: flex
-      justify-content: space-between
+    .cart
+      &-item
+        border-top: 1px solid hsl(0, 0%, 74.1%)
+        padding-top: 10px
+        padding-bottom: 10px
+        display: flex
+        justify-content: space-between
 
   &-img
     border-radius: 13px
     object-fit: cover
-    width: 122px
-    height: 124px
+    width: 100%
+    height: 200px
+
+    &:hover
+      cursor: pointer
+      -webkit-filter: brightness(70%)
+      filter: brightness(70%)
+      -webkit-transition: all 1s ease
+      transition: all 1s ease
 
   &-info
     margin-bottom: 22px
@@ -152,12 +253,17 @@ button
     border-radius: 12px
     height: 49.86px
     width: 122px
+    margin: 0 auto
+    position: relative
 
     input
       border: none
       background-color: transparent
       width: 50px
       text-align: center
+
+      &:invalid
+        color: $error-color
 
   &-btn-quantity
     width: 20px
@@ -188,15 +294,20 @@ button
   &-container
     background-color: white
     margin-bottom: 16.2px
-    
-    &:last-child
-      margin-bottom: 0
+    position: relative
+    margin-top: 45px
 
     label
+      position: absolute
+      top: -25px
+      left: 0
+      display: flex
+      align-items: center
+      gap: 5px
+
       font-size: 10px
       line-height: 12px
       color: hsla(0, 0%, 31%, 1)
-      display: block
       margin-bottom: 5.3px
 
   &-icon
@@ -226,6 +337,18 @@ button
       border-bottom-right-radius: 12px
       padding: 12.77px
       color: hsla(0, 0%, 20%, 1)
+
+form
+  /*&:focus-within:invalid
+    .error-form
+      display: block*/
+
+  &:valid
+    .success-form
+      display: block
+
+    .error-form
+      display: none
        
 .custom
   &-checkbox
@@ -271,7 +394,6 @@ button
           transform: rotate(45deg)
 
   &-select
-    position: relative
     width: 100%
 
     > select
@@ -285,7 +407,7 @@ button
 
     > .select-icon
       position: absolute
-      top: -1px
+      top: 11px
       right: 12px
       pointer-events: none
     
@@ -309,7 +431,7 @@ button
     font-size: 16px
     line-height: 19.5px
     height: 54px
-    width: 166px
+    width: 100%
     float: right
     border: 0
     border-radius: 12px
@@ -337,6 +459,79 @@ footer
       &:focus
         color: darken($medium-color, 10%)
 
+.modal-container
+  width: 100%
+  height: 100%
+  position: absolute
+  z-index: 1
+  top: 0
+  right: 0
+  position: fixed
+  display: none
+
+  > .backdrop
+    background: black
+    width: 100%
+    height: 100%
+    position: absolute
+    right: 0
+    top: 0
+    opacity: .6
+
+  > .modal
+    width: 50%
+    min-width: 300px
+    max-width: 400px
+    min-height: 30%
+    background: white
+    border: 1px solid #eee
+    z-index: 1
+    border-radius: 12px
+    padding: 2rem 1rem
+    text-align: center
+    display: flex
+    flex-direction: column
+    justify-content: center
+    animation: animationScaleUp .5s ease 0s 1 normal forwards
+
+    > .modal
+      &-title
+        margin-bottom: 2rem
+
+      &-icon
+        filter: invert(67%) sepia(18%) saturate(1558%) hue-rotate(341deg) brightness(97%) contrast(95%)
+        animation: animationRotate 1s ease 0s 1 normal forwards
+        margin-bottom: 1rem
+
+@media (min-width: 375px)
+  fieldset
+    &.group
+      margin-top: 0
+      grid-template-columns: repeat(2, minmax(100px, 1fr))
+      gap: 23px
+
+  .cart
+    &-list
+      gap: 31px
+      margin-bottom: 95px
+
+      .cart-item
+        text-align: initial
+        margin-bottom: 0
+        flex-direction: row
+
+    &-input-selector
+      margin: initial
+
+  button
+    &.submit-btn
+      width: 166px
+
+  .error
+    &-out-of-range
+      justify-content: start
+      bottom: -1.5rem
+
 @media (min-width: 768px)
   body,
   html
@@ -353,6 +548,10 @@ footer
 
     &:first-of-type
       padding-top: 30px
+
+    .group
+      padding-top: 0
+      margin-bottom: 16px
 
   .container
     display: grid
@@ -389,6 +588,9 @@ footer
       height: 56px
 
     &-container
+      &:last-of-type
+        margin-bottom: 0
+
       label
         font-size: 12px
         line-height: 15px
@@ -402,25 +604,43 @@ footer
             font-size: 12px
             line-height: 15px
 
-  .cart
-    &.list
-      gap: 31px
-      margin-bottom: 95px
+    &-select
+      > .select-icon
+        top: 19px
 
+  .cart
     &-title
       font-size: 16px
       line-height: 18px
 
+    &-old-price
+      font-size: 12px
+      line-height: 15px
+
+    &-item
+      flex-direction: row
+      text-align: initial
+
+    
     &-img
       min-width: 134px
       min-height: 134px
       width: 134px
       height: 134px
 
-    &-old-price
-      font-size: 12px
-      line-height: 15px
-  
+
 @media (min-width: 992px)
   .cart-container
     width: 383px
+
+@keyframes animationRotate 
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)
+
+@keyframes animationScaleUp
+  0%
+    transform: scale(0.5)
+  100%
+    transform: scale(1)
