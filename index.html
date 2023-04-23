@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reto 16 | Checkout page | Dev Challenges</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <title>Reto 16 | Checkout page</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/fonts.css"> 
 </head>
 <body>
   <div class="modal-container" id="checkoutModal">
     <div class="backdrop"></div>
     <section class="modal">
-      <img src="img/icon/send.svg" alt="Icon" class="modal-icon" height="40">
+      <img src="assets/images/icon/send.svg" alt="Icon" class="modal-icon" height="40">
       <h2 class="modal-title">Success!</h2>
       <p class="modal-description">Your order has been processed correctly</p>
     </section>
@@ -24,7 +24,7 @@
       <aside class="card">
         <ul class="cart-list">
           <li class="cart-item">
-            <img src="img/photo1.png" alt="Backbag" class="cart-img">
+            <img src="assets/images/photo1.png" alt="Backbag" class="cart-img">
             <div class="cart-body">
               <div class="cart-info">
                 <span class="cart-title">Vintage Backbag</span>
@@ -33,18 +33,18 @@
               </div>
               <div class="cart-input-selector">
                 <button class="cart-btn-quantity btn-subs" >
-                  <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
+                  <img src="assets/images/icon/remove.svg" alt="Decrementar" class="icon" width="10">
                 </button>
                 <input type="number" class="cart-item-quantity" value="1" min="1" max="30" form="checkoutForm" title="Maximum stock: 30 items">
-                <small class="error-out-of-range">Out of stock <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"> </small>
+                <small class="error-out-of-range">Out of stock <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"> </small>
                 <button class="cart-btn-quantity btn-add">
-                  <img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10">
+                  <img src="assets/images/icon/add.svg" alt="Incrementar" class="icon" width="10">
                 </button>
               </div>
             </div>
           </li>
           <li class="cart-item">
-            <img src="img/photo2.png" alt="Levi shoes" class="cart-img">
+            <img src="assets/images/photo2.png" alt="Levi shoes" class="cart-img">
             <div class="cart-body">
               <div class="cart-info">
                 <span class="cart-title">Levi Shoes</span>
@@ -53,11 +53,11 @@
               </div>
               <div class="cart-input-selector">
                 <button class="cart-btn-quantity btn-subs">
-                  <img src="img/icon/remove.svg" alt="Decrementar" class="icon" width="10">
+                  <img src="assets/images/icon/remove.svg" alt="Decrementar" class="icon" width="10">
                 </button>
                 <input type="number" class="cart-item-quantity" value="1" min="1" max="30" form="checkoutForm" title="Maximum stock: 30 items">
-                <small class="error-out-of-range">Out of stock <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"> </small>
-                <button class="cart-btn-quantity btn-add"><img src="img/icon/add.svg" alt="Incrementar" class="icon" width="10"></button>
+                <small class="error-out-of-range">Out of stock <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"> </small>
+                <button class="cart-btn-quantity btn-add"><img src="assets/images/icon/add.svg" alt="Incrementar" class="icon" width="10"></button>
               </div>
             </div>
           </li>
@@ -79,17 +79,17 @@
         <h2 class="section-title">Contact information</h2>
         <div class="input-container">
           <div class="input-icon">
-            <img src="img/icon/email.svg" alt="Email" class="icon" width="10">
+            <img src="assets/images/icon/email.svg" alt="Email" class="icon" width="10">
             <input type="email" id="email" name="email" placeholder="Enter your email..." required>
-            <label for="email">E-mail <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
+            <label for="email">E-mail <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <div class="input-container">
           <div class="input-icon">
-            <img src="img/icon/phone.svg" alt="Teléfono" class="icon" width="10">
+            <img src="assets/images/icon/phone.svg" alt="Teléfono" class="icon" width="10">
             <input type="tel" id="phone" name="phone" placeholder="Enter your phone..." pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" title="Enter in format ###-##-###" required>
-            <label for="phone">Phone <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
+            <label for="phone">Phone <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
       </fieldset>
@@ -99,32 +99,32 @@
 
         <div class="input-container">
           <div class="input-icon">
-            <img src="img/icon/avatar.svg" alt="Avatar" class="icon" width="10">
+            <img src="assets/images/icon/avatar.svg" alt="Avatar" class="icon" width="10">
             <input type="text" id="full-name" name="full-name" placeholder="Rodney Cotton" pattern="[A-zÀ-ž ]{3,}" required title="Your name can only contain letters">
-            <label for="full-name">Full name <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
+            <label for="full-name">Full name <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <div class="input-container">
           <div class="input-icon">
-            <img src="img/icon/home.svg" alt="Address" class="icon" width="10">
+            <img src="assets/images/icon/home.svg" alt="Address" class="icon" width="10">
             <input type="text" id="address" name="address" placeholder="Your address..." required maxlength="100">
-            <label for="address">Address <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
+            <label for="address">Address <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <div class="input-container">
           <div class="input-icon">
-            <img src="img/icon/city.svg" alt="Edificio" class="icon" width="10">
+            <img src="assets/images/icon/city.svg" alt="Edificio" class="icon" width="10">
             <input type="text" id="city" name="city" placeholder="Your city..." required maxlength="50">
-            <label for="city">Your city <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
+            <label for="city">Your city <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
           </div>
         </div>
 
         <fieldset class="group">
           <div class="input-container">
             <div class="input-icon">
-              <img src="img/icon/world.svg" alt="Planeta" class="icon" width="10">
+              <img src="assets/images/icon/world.svg" alt="Planeta" class="icon" width="10">
               <div class="custom-select">
                 <select name="country" id="country" required>
                   <option value="" disabled selected>Your country...</option>
@@ -132,9 +132,9 @@
                   <option value="2">Paraguay</option>
                   <option value="3">Ecuador</option>
                 </select>
-                <label for="country">Country <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
+                <label for="country">Country <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
                 <span class="select-icon">
-                  <img src="img/icon/down.svg" alt="Planeta" class="icon select-icon" width="10">
+                  <img src="assets/images/icon/down.svg" alt="Planeta" class="icon select-icon" width="10">
                 </span>
               </div>
             </div>
@@ -142,9 +142,9 @@
           
           <div class="input-container">
             <div class="input-icon">
-              <img src="img/icon/mailbox.svg" alt="Buzón" class="icon" width="10">
+              <img src="assets/images/icon/mailbox.svg" alt="Buzón" class="icon" width="10">
               <input type="text" id="postal-code" name="postal_code" placeholder="Your postal code..." required pattern="[0-9]{4}" title="1234">
-              <label for="postal-code">Postal code <img src="img/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
+              <label for="postal-code">Postal code <img src="assets/images/icon/error.svg" alt="Error" class="error-input icon" width="10"></label>
             </div>
           </div>
         </fieldset>
@@ -161,9 +161,10 @@
     </form>
   </main>
   <footer class="credits">
-    created by <a href="https://devchallenges.io/portfolio/karinaestaba" title="Visitar web">Karina estaba</a> - devchallenges.io
+    Challenge by Frontend Mentor.  
+    Coded by <a href="https:/www.frontendmentor.io/profile/karinaestaba/" title="Explora más proyectos :D">&nbsp;Karina Estaba  <img src="assets/images/link.svg" alt="Link" width="10px" class="icon-link"></a>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

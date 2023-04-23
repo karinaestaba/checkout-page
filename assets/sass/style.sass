@@ -450,14 +450,18 @@ footer
     padding-bottom: 20px
     
     a
-      color: lighten($dark-color, 25%)
-      font-weight: 700
+      color: #f2984a
       text-decoration: none
+      transition: all .5s ease
+      white-space: nowrap
 
       &:hover,
       &:active,
       &:focus
-        color: darken($medium-color, 10%)
+        color: darken(#f2984a, 20%)
+
+      img
+        width: 10px
 
 .modal-container
   width: 100%
